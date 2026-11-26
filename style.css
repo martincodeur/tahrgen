@@ -1,0 +1,211 @@
+/* ===== Le temple du tahrgen — feuille de style commune ===== */
+
+:root {
+  --bleu: #1a56db;
+  --bleu-fonce: #1240a8;
+  --bleu-pale: #eef3fe;
+  --texte: #1f2937;
+  --texte-doux: #6b7280;
+  --bord: #e5e7eb;
+  --fond: #ffffff;
+  --rayon: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--bleu); }
+
+/* ----- En-tête / navigation ----- */
+.entete {
+  border-bottom: 1px solid var(--bord);
+  background: var(--fond);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.entete-interieur {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.logo {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--bleu);
+  text-decoration: none;
+}
+.nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--texte);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+.nav a:hover { background: var(--bleu-pale); color: var(--bleu); }
+.nav a[aria-current="page"] { background: var(--bleu); color: #fff; }
+
+/* ----- Contenu ----- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+.titre-page {
+  color: var(--bleu);
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+.intro {
+  color: var(--texte-doux);
+  font-size: 1.1rem;
+  margin: 0 0 32px;
+  max-width: 60ch;
+}
+
+/* ----- Accueil ----- */
+.accueil-hero {
+  text-align: center;
+  padding: 48px 0 40px;
+}
+.accueil-hero h1 {
+  color: var(--bleu);
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+.accueil-hero p {
+  color: var(--texte-doux);
+  font-size: 1.15rem;
+  margin: 0 auto;
+  max-width: 50ch;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.categorie {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--bord);
+  border-radius: var(--rayon);
+  padding: 28px 24px;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+.categorie:hover {
+  border-color: var(--bleu);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 86, 219, .12);
+}
+.categorie .icone { font-size: 2rem; }
+.categorie h2 {
+  color: var(--bleu);
+  margin: 12px 0 6px;
+  font-size: 1.35rem;
+}
+.categorie p { margin: 0; color: var(--texte-doux); }
+.categorie .lien { display: inline-block; margin-top: 14px; font-weight: 600; color: var(--bleu); }
+
+/* ----- Les enseignes (grille de cartes avec photo) ----- */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.carte {
+  border: 1px solid var(--bord);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  background: var(--fond);
+}
+.carte img,
+.carte .sans-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: var(--bleu-pale);
+}
+.carte .sans-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bleu);
+  font-size: 2.5rem;
+}
+.carte-corps { padding: 16px 18px 20px; }
+.carte h2 { margin: 0 0 4px; font-size: 1.2rem; }
+.carte .lieu { color: var(--texte-doux); font-size: 0.9rem; margin: 0 0 8px; }
+.carte p { margin: 0; }
+
+/* ----- Les mots (lexique) ----- */
+.lexique { margin: 0; }
+.mot {
+  border-bottom: 1px solid var(--bord);
+  padding: 20px 0;
+}
+.mot:first-child { border-top: 1px solid var(--bord); }
+.mot dt {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--bleu);
+}
+.mot dt .nature {
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--texte-doux);
+  margin-left: 8px;
+}
+.mot dd { margin: 6px 0 0; }
+.mot .exemple {
+  margin-top: 8px;
+  padding-left: 12px;
+  border-left: 3px solid var(--bleu-pale);
+  font-style: italic;
+  color: var(--texte-doux);
+}
+
+/* ----- Les anecdotes ----- */
+.anecdotes { display: grid; gap: 20px; }
+.anecdote {
+  border: 1px solid var(--bord);
+  border-left: 4px solid var(--bleu);
+  border-radius: var(--rayon);
+  padding: 20px 24px;
+}
+.anecdote h2 { margin: 0 0 4px; font-size: 1.3rem; }
+.anecdote .date { color: var(--texte-doux); font-size: 0.9rem; margin: 0 0 10px; }
+.anecdote p { margin: 0 0 8px; }
+.anecdote p:last-child { margin-bottom: 0; }
+
+/* ----- Pied de page ----- */
+.pied {
+  border-top: 1px solid var(--bord);
+  text-align: center;
+  color: var(--texte-doux);
+  font-size: 0.9rem;
+  padding: 24px 20px;
+}

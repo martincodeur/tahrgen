@@ -4,30 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Le temple du tahrgen</title>
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      background: #ffffff;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    h1 {
-      color: #1a56db;
-      font-size: clamp(2rem, 8vw, 5rem);
-      line-height: 1.1;
-      margin: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Ici c'est le temple du tahrgen</h1>
+  <header class="entete">
+    <div class="entete-interieur">
+      <a class="logo" href="index.html">Le temple du tahrgen</a>
+      <nav class="nav">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="enseignes.html">Les enseignes</a>
+        <a href="mots.html">Les mots tahrgen</a>
+        <a href="anecdotes.html">Les anecdotes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="accueil-hero">
+      <h1>Ici c'est le temple du tahrgen</h1>
+      <p>Bienvenue ! Choisis une catégorie pour explorer l'univers tahrgen.</p>
+    </section>
+
+    <section class="categories">
+      <a class="categorie" href="enseignes.html">
+        <div class="icone">🪧</div>
+        <h2>Les enseignes</h2>
+        <p>Les enseignes tahrgen repérées ici et là.</p>
+        <span class="lien">Voir les enseignes →</span>
+      </a>
+      <a class="categorie" href="mots.html">
+        <div class="icone">📖</div>
+        <h2>Les mots tahrgen</h2>
+        <p>Le lexique tahrgen, avec définitions et exemples.</p>
+        <span class="lien">Voir les mots →</span>
+      </a>
+      <a class="categorie" href="anecdotes.html">
+        <div class="icone">💬</div>
+        <h2>Les anecdotes tahrgen</h2>
+        <p>Les histoires tahrgen qui méritent d'être racontées.</p>
+        <span class="lien">Voir les anecdotes →</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pied">Le temple du tahrgen · tahrgen.com</footer>
 </body>
 </html>
